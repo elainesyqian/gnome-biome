@@ -1,0 +1,430 @@
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Overrides for Chatbot Icon */
+#si-wrapper.si-livechat .silc-btn-button {
+  background-image: url(mrgnomechat.png) !important;
+  background-size: 56px !important;
+  background-color: transparent !important;
+}
+
+#si-wrapper .silc-btn {
+  bottom: 50px !important;
+  height: 60px !important;
+  width: 60px !important;
+  right: 25px !important;
+}
+
+/*
+.navbar {
+  position: fixed;
+  width: 100%;
+}*/
+
+/* Body Styling */
+body {
+  line-height: 1.4;
+  background-color: #f4eee3e3; /* Light beige background */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1.8rem;
+}
+
+/* Content Wrapper */
+.content {
+  flex: 1;
+}
+
+/* Header Styling */
+header {
+  background: #dfeddf; /* Pale green background */
+  color: #13451e;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0.2;
+  font-size: 3.8rem;
+}
+
+/* Navigation Styling */
+nav {
+  background: #556b2fbe; /* Dark olive green */
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  font-size: 2.6rem;
+  color: #556b2f;
+  margin-bottom: 0.5rem;
+}
+
+section h3 {
+  font-size: 1.8rem;
+  color: #556b2f;
+  margin-bottom: 0.5rem;
+}
+
+section h4 {
+  font-size: 1.75rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+section p {
+  font-size: 1.6rem;
+}
+
+textarea green {
+  color: rgb(12, 77, 8);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background-color: #edbdbe;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  outline: #bfd8b1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  accent-color: #bfd8b1;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+button {
+  background-color: #ff6666;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff3333;
+}
+
+/* Custom CSS for Mood Tracker Checkboxes */
+#mood-form input[type="radio"] {
+  display: none;
+}
+
+.mood-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+
+.mood-calendar-square {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+#mood-form label {
+  position: relative;
+  padding-left: 40px; /* Increased spacing */
+  cursor: pointer;
+  display: block; /* Ensures each label is on a new line */
+  margin-bottom: 10px; /* Increased spacing between options */
+  font-size: 1.2rem; /* Match font size with <p> */
+}
+
+#mood-form label:before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Diameter of the circle */
+  height: 20px; /* Diameter of the circle */
+  margin-right: 10px; /* Spacing between circle and label text */
+  border-radius: 50%; /* Makes it a circle */
+  border: 2px solid transparent; /* Transparent border by default */
+  background-color: transparent; /* Transparent fill by default */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for color change */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Assigning colors of the rainbow to each label */
+#mood-form label:nth-of-type(1):before {
+  border-color: rgb(221, 158, 189);
+}
+
+#mood-form label:nth-of-type(2):before {
+  border-color: rgb(89, 122, 175);
+}
+
+#mood-form label:nth-of-type(3):before {
+  border-color: rgb(196, 215, 180);
+}
+
+#mood-form label:nth-of-type(4):before {
+  border-color: rgb(225, 169, 118);
+}
+
+#mood-form label:nth-of-type(5):before {
+  border-color: rgb(197, 112, 97);
+}
+
+#mood-form label.checked:before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Diameter of the circle */
+  height: 20px; /* Diameter of the circle */
+  margin-right: 10px; /* Spacing between circle and label text */
+  border-radius: 50%; /* Makes it a circle */
+  border: 2px solid black; /* Transparent border by default */
+  background-color: black; /* Transparent fill by default */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for color change */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#mood-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #6d976d;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#mood-form button:hover {
+  background-color: #6d976d;
+}
+
+#mood-tracker-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensure content wraps if necessary */
+}
+
+#mood-tracker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; /* Ensure content wraps if necessary */
+}
+
+#mood-tracker,
+#mood-calendar {
+  width: 48%;
+}
+
+#mood-calendar {
+  margin-top: 2rem;
+}
+
+#calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#calendar-month-year {
+  font-size: 1.5rem;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day-name {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.calendar-day {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.mood-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.mood-label[data-color="rgb(221, 158, 189)"] .mood-circle {
+  background-color: rgb(221, 158, 189);
+}
+
+.mood-label[data-color="rgb(89, 122, 175)"] .mood-circle {
+  background-color: rgb(89, 122, 175);
+}
+
+.mood-label[data-color="rgb(196, 215, 180)"] .mood-circle {
+  background-color: rgb(196, 215, 180);
+}
+
+.mood-label[data-color="rgb(225, 169, 118)"] .mood-circle {
+  background-color: rgb(225, 169, 118);
+}
+
+.mood-label[data-color="rgb(197, 112, 97)"] .mood-circle {
+  background-color: rgb(197, 112, 97);
+}
+
+/* Hidden class for hiding elements */
+.hidden {
+  display: none;
+}
+
+/* Footer Styling */
+footer {
+  background: #dc5a5ab6;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App p.textarea {
+  font-weight: 700;
+  text-align: center;
+}
+
+.breathing-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.breathing-container h1 {
+  margin-bottom: 20px;
+}
+
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #76c7c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin: 0 auto;
+  transition: background-color 1s;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #76c7c0;
+  color: #fff;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #64a5a0;
+}
+
+/*style for banner*/
+.banner {
+  position: center;
+}
+
+/*style for banner image*/
+.banner img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  display: block;
+}
