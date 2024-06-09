@@ -117,38 +117,26 @@ textarea green {
   color: rgb(12, 77, 8);
 }
 
-.container {
+.container1 {
+  align-items: center;
   display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.slider-container1 {
+  display: flex;
+  align-items: center;
   gap: 20px;
 }
 
 .card {
   background-color: #edbdbe;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 500px;
-}
-
-.slider-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.slider {
   width: 100%;
-  height: 8px;
-  background: #ddd;
-  outline: #bfd8b1;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  accent-color: #bfd8b1;
-}
-
-.slider:hover {
-  opacity: 1;
 }
 
 button {
@@ -274,11 +262,7 @@ button:hover {
 
 #mood-tracker,
 #mood-calendar {
-  width: 48%;
-}
-
-#mood-calendar {
-  margin-top: 2rem;
+  width: 45%;
 }
 
 #calendar-nav {
@@ -427,4 +411,132 @@ button:hover {
   margin-right: auto;
   width: 60%;
   display: block;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.slider-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card1 {
+  background-color: #edbdbe;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 420px;
+  margin: 20px;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  accent-color: #bfd8b1;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider-button-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  background-color: #ff6666;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff3333;
+}
+
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #76c7c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.inner-circle {
+  width: 0;
+  height: 0;
+  background-color: #76c7c0;
+  border-radius: 50%;
+  transition: width 4s ease-in-out, height 4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle span {
+  position: absolute;
+  color: #333;
+  font-size: 24px;
+}
+
+.circle-timer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.circle-timer svg {
+  transform: rotate(-90deg);
+}
+
+.circle-timer circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.circle-timer .background {
+  stroke: #bfd8b1;
+}
+
+.circle-timer .foreground {
+  stroke: #76c7c0;
+  stroke-dasharray: 408;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke-linecap: round;
+}
+
+.circle-timer text {
+  font-size: 1.5em;
+  fill: black;
+  dominant-baseline: middle;
+  text-anchor: middle;
+  transform: rotate(90deg); /* Rotate text back to upright position */
+  transform-origin: center; /* Ensure rotation happens around the center */
 }

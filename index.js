@@ -27,7 +27,7 @@ function checkMoodSubmission() {
     document.getElementById("mood-form").classList.remove("hidden");
     document.getElementById(
       "mood-message"
-    ).textContent = `Mood for today: ${localStorage.getItem("todayMood")}`;
+    ).textContent = `mood for today: ${localStorage.getItem("todayMood")}`;
   }
 
   const form = document.getElementById("mood-form");
@@ -127,13 +127,13 @@ function generateCalendar() {
   const moods = JSON.parse(localStorage.getItem("moods")) || [];
 
   calendarElement.innerHTML = `
-    <div class="calendar-day-name">Sun</div>
-    <div class="calendar-day-name">Mon</div>
-    <div class="calendar-day-name">Tue</div>
-    <div class="calendar-day-name">Wed</div>
-    <div class="calendar-day-name">Thu</div>
-    <div class="calendar-day-name">Fri</div>
-    <div class="calendar-day-name">Sat</div>
+    <div class="calendar-day-name">sun</div>
+    <div class="calendar-day-name">mon</div>
+    <div class="calendar-day-name">tue</div>
+    <div class="calendar-day-name">wed</div>
+    <div class="calendar-day-name">thu</div>
+    <div class="calendar-day-name">fri</div>
+    <div class="calendar-day-name">sat</div>
   `;
 
   for (let i = 0; i < firstDay; i++) {

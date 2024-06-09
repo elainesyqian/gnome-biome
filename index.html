@@ -24,6 +24,9 @@
       h2 {
         font-family: "Jost", sans-serif;
       }
+      button{
+        font-family: "Single Day", sans-serif;
+      }
     </style>
 
     <!-- Replace 'no-api-key' in the link below with your API key -->
@@ -71,41 +74,46 @@
             stay on top of your self-care routine with personalized reminders
             from Quillby!
           </p>
-          <p>Click each button to toggle custom reminders</p>
-          <br />
-
+          <p>click each button to toggle custom reminders</p>
+        </br>
           
     </head>
     <body>
-        <div class="container">
+
+        <div class="container1">
             <div class="card">
-                <h2>Stretch</h2>
-                <p>Get a notification to get up and stretch every...</p>
-                <div class="slider-container">
+                <h2><font size="6">stretch</font></h2>
+                <p>get a notification to get up, walk around and stretch every...</p>
+                <h3><span id="stretchTime">4 hrs</span></h3>
+                <div class="slider-container1">
                     <input type="range" min="10" max="300" value="240" class="slider" id="stretchSlider" oninput="updateTime('stretch')">
-                    <span id="stretchTime">4 hrs</span>
+                    
                 </div>
-                <button id="stretchBtn" onclick="toggleNotification('stretch')">Start</button>
+                <button id="stretchBtn" onclick="toggleNotification('stretch')">start</button>
             </div>
     
             <div class="card">
-                <h2>Water</h2>
-                <p>Get a notification to drink water every...</p>
-                <div class="slider-container">
+                <h2><font size="6">water</font></h2>
+                <p>get a notification to stay hydrated and drink water every...</p>
+                <h3><span id="waterTime">30 min</span></h3>
+                <div class="slider-container1">
+                  
                     <input type="range" min="10" max="300" value="30" class="slider" id="waterSlider" oninput="updateTime('water')">
-                    <span id="waterTime">30 min</span>
+                    
                 </div>
-                <button id="waterBtn" onclick="toggleNotification('water')">Start</button>
+                <button id="waterBtn" onclick="toggleNotification('water')">start</button>
             </div>
     
             <div class="card">
-                <h2>Screen Break</h2>
-                <p>Get a notification to take a screen break and go outside every...</p>
-                <div class="slider-container">
+                <h2><font size="6">screen break</font></h2>
+                <p>get a notification to take a break from electronic devices and go outside every...</p>
+                <h3><span id="breakTime">2 hrs</span></h3>
+                <div class="slider-container1">
+                  
                     <input type="range" min="10" max="300" value="120" class="slider" id="breakSlider" oninput="updateTime('break')">
-                    <span id="breakTime">2 hrs</span>
+                    
                 </div>
-                <button id="breakBtn" onclick="toggleNotification('break')">Start</button>
+                <button id="breakBtn" onclick="toggleNotification('break')">start</button>
             </div>
         </div>
     
@@ -151,11 +159,11 @@
                 const slider = document.getElementById(type + 'Slider');
                 const interval = slider.value * 60000;  // Convert minutes to milliseconds
     
-                if (button.textContent === 'Start') {
-                    button.textContent = 'Pause';
+                if (button.textContent === 'start') {
+                    button.textContent = 'pause';
                     startNotification(type, interval);
                 } else {
-                    button.textContent = 'Start';
+                    button.textContent = 'start';
                     pauseNotification(type);
                 }
             }
@@ -202,8 +210,13 @@
           <h2 style="text-align:right;">personal goals</h2>
           <p style="text-align:right;">jot down your personal goals for self improvement!</p>
           <textarea id="editable-class">
-            <p>what's on your mind?</p>
-            <div class="myclass editable">start here!</div>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT';font-size:larger">shoot for the moon! you just might land in the stars...</p>
+            <p style="font-family:'Gill Sans'" >goals for your self-care regimen:</p>
+            <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: yoga, limiting social media, mindfulness...</div>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT'">goals for your future ambitions:</p>
+            <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: build a company, patent a product, network with others...</div>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT'">goals for your person bucketlist:</p>
+            <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: travelling the world, meeting a celebrity, bungee jumping...</div>
           </textarea>
           <script>
             tinymce.init({
@@ -212,7 +225,7 @@
               //   "body { background: #fff1bd; color: black; font-size: 15pt; font-family: "Single Day"; }",
               max_height: 750,
               max_width: 500,
-              min_height: 350,
+              min_height: 500,
               min_width: 400,
               toolbar:
                 "restoredraft | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
@@ -232,52 +245,54 @@
             <section id="mood-tracker">
               <h2>mood tracker</h2>
               <p>log your daily moods and monitor your mental well-being!</p>
-
+              <br>
               <h3>how are you feeling right now?</h3>
 
               <div id="mood-tracking-form">
                 <form id="mood-form">
                   <label class="mood-label" data-color="rgb(221, 158, 189)">
                     <input type="radio" name="mood" value="happy" />
-                    happy
+                    happy &#128516
                   </label>
                   <label class="mood-label" data-color="rgb(89, 122, 175)">
                     <input type="radio" name="mood" value="sad" />
-                    sad
+                    sad &#128546
                   </label>
                   <label class="mood-label" data-color="rgb(196, 215, 180)">
                     <input type="radio" name="mood" value="chill" />
-                    chill
+                    chill &#128524
                   </label>
                   <label class="mood-label" data-color="rgb(225, 169, 118)">
                     <input type="radio" name="mood" value="stressed" />
-                    stressed
+                    stressed &#128547
                   </label>
                   <label class="mood-label" data-color="rgb(197, 112, 97)">
                     <input type="radio" name="mood" value="angry" />
-                    angry
+                    angry &#128545
                   </label>
                   <button type="submit">submit</button>
                 </form>
               </div>
-
+              <br>
               <h4 id="mood-message"></h4>
             </section>
+
             <section id="mood-calendar">
-              <h2>Mood Calendar</h2>
+              <h2>mood calendar</h2>
+              <p>see a summary of your past emotions!</p>
               <div id="calendar-nav">
                 <button id="prev-month">&lt;</button>
                 <span id="calendar-month-year"></span>
                 <button id="next-month">&gt;</button>
               </div>
               <div id="calendar">
-                <div class="calendar-day-name">Sun</div>
-                <div class="calendar-day-name">Mon</div>
-                <div class="calendar-day-name">Tue</div>
-                <div class="calendar-day-name">Wed</div>
-                <div class="calendar-day-name">Thu</div>
-                <div class="calendar-day-name">Fri</div>
-                <div class="calendar-day-name">Sat</div>
+                <div class="calendar-day-name">sun</div>
+                <div class="calendar-day-name">mon</div>
+                <div class="calendar-day-name">tue</div>
+                <div class="calendar-day-name">wed</div>
+                <div class="calendar-day-name">thu</div>
+                <div class="calendar-day-name">fri</div>
+                <div class="calendar-day-name">sat</div>
               </div>
             </section>
           </div>
@@ -288,55 +303,156 @@
           <p style="text-align:right;">wind down with some meditation.</p>
           
     </head>
-        <body>
-      <audio id="breathingAudio" src="{{ url_for('static', filename='audio/CalmMusic.mp3') }}" preload="auto"></audio>
-        <div class="breathing-container">
-            <h1>Breathing Exercise</h1>
-      <body>Press Start to begin</body>
-            <div class="breathing-circle" id="circle">Breathe</div>
-            <div class="button-container">
-                <button onclick="startBreathing()">Start</button>
-                <button onclick="stopBreathing()">Stop</button>
-                
-            </div>
-        </div>
-    
-        <script>
-            let breathingInterval;
-            let breatheIn = true;
-    
-            function startBreathing() {
-                if (breathingInterval) return; // Avoid multiple intervals
-                breathingInterval = setInterval(() => {
-                    const circle = document.getElementById('circle');
-                    breathingAudio.play();
-                    if (breatheIn) {
-                        circle.style.backgroundColor = '#76c7c0';
-                        circle.textContent = 'Inhale';
-                    } else {
-                        circle.style.backgroundColor = '#f0f0f0';
-                        circle.textContent = 'Exhale';
-                    }
-                    breatheIn = !breatheIn;
-                }, 4000); // 5 seconds interval
-            }
-    
-            function stopBreathing() {
-                clearInterval(breathingInterval);
-                breathingInterval = null;
-                breathingAudio.pause();
-                const circle = document.getElementById('circle');
-                circle.style.backgroundColor = '#f0f0f0';
-                circle.textContent = 'Breathe';
-            }
-        </script>
-    </body>
+        
+    <body>
+      <audio id="breathingAudio" src="audio/CalmMusic.mp3" preload="auto"></audio>
+      <div class="container2">
+          <div class="card1">
+              <h2><font size="6">breathing exercises</font></h2>
+              <p>take some deep breaths</p>
+              <div class="breathing-circle" id="circle">
+                  <div class="inner-circle" id="innerCircle"><span id="breathText">breathe</span></div>
+              </div>
+              <div class="button-container">
+                  <button id="breathingBtn" onclick="toggleBreathing()">start</button>
+              </div>
+          </div>
+  
+          <div class="card1">
+            <h2><font size="6">meditation timer</font></h2>
+              <div class="slider-button-container2">
+                  <div class="slider-container2">
+                      <span id="meditationTime">5 min</span>
+                      <input type="range" min="1" max="60" value="5" class="slider" id="meditationSlider" oninput="updateMeditationTime()">
+                  </div>
+                  <div class="circle-timer">
+                      <svg width="150" height="150">
+                          <circle class="background" cx="75" cy="75" r="65" />
+                          <circle class="foreground" cx="75" cy="75" r="65" />
+                          <text id="timerText" x="75" y="75">05:00</text>
+                      </svg>
+                  </div>
+              </div>
+              <button id="meditationBtn" onclick="toggleMeditation()">start</button>
+          </div>
+      </div>
+  
+      <script>
+          let breathingInterval;
+          let breatheIn = true;
+          const breathingAudio = document.getElementById('breathingAudio');
+  
+          function toggleBreathing() {
+              const button = document.getElementById('breathingBtn');
+              const circle = document.getElementById('circle');
+              const innerCircle = document.getElementById('innerCircle');
+              const breathText = document.getElementById('breathText');
+              if (breathingInterval) {
+                  clearInterval(breathingInterval);
+                  breathingInterval = null;
+                  breathingAudio.pause();
+                  innerCircle.style.width = '0';
+                  innerCircle.style.height = '0';
+                  breathText.textContent = 'Breathe';
+                  button.textContent = 'start';
+              } else {
+                  breatheIn = true;
+                  startBreathingCycle(); // Start immediately
+                  breathingInterval = setInterval(startBreathingCycle, 5000);
+                  button.textContent = 'Stop';
+              }
+          }
+  
+          function startBreathingCycle() {
+              const innerCircle = document.getElementById('innerCircle');
+              const breathText = document.getElementById('breathText');
+              breathingAudio.play();
+              if (breatheIn) {
+                  innerCircle.style.width = '130px'; // updated
+                  innerCircle.style.height = '130px'; // updated
+                  breathText.textContent = 'Inhale';
+              } else {
+                  innerCircle.style.width = '0';
+                  innerCircle.style.height = '0';
+                  breathText.textContent = 'Exhale';
+              }
+              breatheIn = !breatheIn;
+          }
+  
+          let meditationTimer;
+          let timeLeft;
+          let meditationRunning = false;
+  
+          function updateMeditationTime() {
+              const slider = document.getElementById('meditationSlider');
+              const timeDisplay = document.getElementById('meditationTime');
+              const initialTime = slider.value;
+              timeDisplay.textContent = `${initialTime} min`;
+              document.getElementById('timerText').textContent = formatTime(initialTime * 60);
+              updateCircleTimer(initialTime * 60, initialTime * 60);
+          }
+  
+          function formatTime(seconds) {
+              const minutes = Math.floor(seconds / 60);
+              const secs = seconds % 60;
+              return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+          }
+  
+          function toggleMeditation() {
+              const button = document.getElementById('meditationBtn');
+              const slider = document.getElementById('meditationSlider');
+              const initialTime = slider.value * 60;
+  
+              if (!meditationRunning) {
+                  timeLeft = initialTime;
+                  button.textContent = 'pause';
+                  document.getElementById('timerText').textContent = formatTime(timeLeft);
+                  startMeditation(initialTime);
+              } else {
+                  button.textContent = 'start';
+                  pauseMeditation();
+              }
+  
+              meditationRunning = !meditationRunning;
+          }
+  
+          function startMeditation(totalTime) {
+              meditationTimer = setInterval(() => {
+                  if (timeLeft <= 0) {
+                      clearInterval(meditationTimer);
+                      document.getElementById('meditationBtn').textContent = 'start';
+                      meditationRunning = false;
+                      document.getElementById('timerText').textContent = formatTime(0);
+                      updateCircleTimer(0, totalTime);
+                      return;
+                  }
+  
+                  timeLeft--;
+                  document.getElementById('timerText').textContent = formatTime(timeLeft);
+                  updateCircleTimer(timeLeft, totalTime);
+              }, 1000);
+          }
+  
+          function pauseMeditation() {
+              clearInterval(meditationTimer);
+          }
+  
+          function updateCircleTimer(secondsLeft, totalSeconds) {
+              const circle = document.querySelector('.circle-timer .foreground');
+              const offset = 408 * (1 - (secondsLeft / totalSeconds));
+              circle.style.strokeDashoffset = offset;
+          }
+  
+          window.onload = updateMeditationTime;
+      </script>
+
         </section>
       </main>
     </div>
 
     <footer>
-      <p>&copy; 2024 Gnome Biome. All rights reserved.</p>
+      <p>&copy; 2024 gnome biome. all rights reserved.</p>
+      <p><font size="-1">JamHacks 8 Submission — Eileen Kuang, Elaine Qian, Vanessa Tan</font></p>
     </footer>
 
     <script src="index.js"></script>
