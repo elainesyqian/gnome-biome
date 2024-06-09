@@ -106,7 +106,7 @@
     
             <div class="card">
                 <h2><font size="6">screen break</font></h2>
-                <p>get a notification to take a break from electronic devices and go outside every...</p>
+                <p>get a notification to take a break from devices and go outside every...</p>
                 <h3><span id="breakTime">2 hrs</span></h3>
                 <div class="slider-container1">
                   
@@ -210,12 +210,12 @@
           <h2 style="text-align:right;">personal goals</h2>
           <p style="text-align:right;">jot down your personal goals for self improvement!</p>
           <textarea id="editable-class">
-            <p style="font-family:'Gill Sans', 'Gill Sans MT';font-size:larger">shoot for the moon! you just might land in the stars...</p>
-            <p style="font-family:'Gill Sans'" >goals for your self-care regimen:</p>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT';font-size:larger">shoot for the moon! you just might land in the stars... &#127775</p>
+            <p style="font-family:'Gill Sans'" >&#127800 goals for your self-care regimen:</p>
             <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: yoga, limiting social media, mindfulness...</div>
-            <p style="font-family:'Gill Sans', 'Gill Sans MT'">goals for your future ambitions:</p>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT'">&#128213 goals for your future ambitions:</p>
             <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: build a company, patent a product, network with others...</div>
-            <p style="font-family:'Gill Sans', 'Gill Sans MT'">goals for your person bucketlist:</p>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT'">&#128205 goals for your person bucketlist:</p>
             <div class="myclass editable" style="color:grey;font-family:'Gill Sans'">for example: travelling the world, meeting a celebrity, bungee jumping...</div>
           </textarea>
           <script>
@@ -305,13 +305,14 @@
     </head>
         
     <body>
-      <audio id="breathingAudio" src="audio/CalmMusic.mp3" preload="auto"></audio>
+      <audio id="breathingAudio" src="CalmMusic.mp3" preload="auto"></audio>
+      <audio id="alertSound" src="alert.mp3" loop preload="auto"></audio>
+  
       <div class="container2">
           <div class="card1">
-              <h2><font size="6">breathing exercises</font></h2>
-              <p>take some deep breaths</p>
+              <h2><font size="6">breathing exercise</font></h2>
               <div class="breathing-circle" id="circle">
-                  <div class="inner-circle" id="innerCircle"><span id="breathText">breathe</span></div>
+                  <div class="inner-circle" id="innerCircle"><span id="breathText">Breathe</span></div>
               </div>
               <div class="button-container">
                   <button id="breathingBtn" onclick="toggleBreathing()">start</button>
@@ -319,7 +320,7 @@
           </div>
   
           <div class="card1">
-            <h2><font size="6">meditation timer</font></h2>
+              <h2><font size="6">meditation timer</font></h2>
               <div class="slider-button-container2">
                   <div class="slider-container2">
                       <span id="meditationTime">5 min</span>
@@ -359,7 +360,7 @@
                   breatheIn = true;
                   startBreathingCycle(); // Start immediately
                   breathingInterval = setInterval(startBreathingCycle, 5000);
-                  button.textContent = 'Stop';
+                  button.textContent = 'stop';
               }
           }
   
@@ -382,6 +383,7 @@
           let meditationTimer;
           let timeLeft;
           let meditationRunning = false;
+          const alertSound = document.getElementById('alertSound');
   
           function updateMeditationTime() {
               const slider = document.getElementById('meditationSlider');
@@ -399,49 +401,71 @@
           }
   
           function toggleMeditation() {
-              const button = document.getElementById('meditationBtn');
-              const slider = document.getElementById('meditationSlider');
-              const initialTime = slider.value * 60;
+      const button = document.getElementById('meditationBtn');
+      const slider = document.getElementById('meditationSlider');
+      const initialTime = slider.value * 60;
   
-              if (!meditationRunning) {
-                  timeLeft = initialTime;
-                  button.textContent = 'pause';
-                  document.getElementById('timerText').textContent = formatTime(timeLeft);
-                  startMeditation(initialTime);
-              } else {
-                  button.textContent = 'start';
-                  pauseMeditation();
-              }
+      if (!meditationRunning && alertSound.paused) {  // Starting or resuming the timer
+          if (timeLeft === undefined || timeLeft === 0) {
+              timeLeft = initialTime;
+          }
+          button.textContent = 'pause';
+          startMeditation();
+      } else if (meditationRunning && timeLeft > 0) {  // Pausing the timer
+          button.textContent = 'start';
+          pauseMeditation();
+      } else {  // Stopping the alert
+          button.textContent = 'start';
+          alertSound.pause();
+          alertSound.currentTime = 0;
+          timeLeft = initialTime;
+          document.getElementById('timerText').textContent = formatTime(initialTime);
+          updateCircleTimer(initialTime, initialTime);
+      }
   
-              meditationRunning = !meditationRunning;
+      meditationRunning = !meditationRunning;
+  }
+  
+  function startMeditation() {
+      const slider = document.getElementById('meditationSlider');
+      const totalTime = slider.value * 60;
+  
+      meditationTimer = setInterval(() => {
+          if (timeLeft <= 0) {
+              clearInterval(meditationTimer);
+              document.getElementById('meditationBtn').textContent = 'stop';
+              meditationRunning = false;
+              document.getElementById('timerText').textContent = formatTime(0);
+              updateCircleTimer(0, totalTime);
+              alertSound.play();
+              return;
           }
   
-          function startMeditation(totalTime) {
-              meditationTimer = setInterval(() => {
-                  if (timeLeft <= 0) {
-                      clearInterval(meditationTimer);
-                      document.getElementById('meditationBtn').textContent = 'start';
-                      meditationRunning = false;
-                      document.getElementById('timerText').textContent = formatTime(0);
-                      updateCircleTimer(0, totalTime);
-                      return;
-                  }
+          timeLeft--;
+          document.getElementById('timerText').textContent = formatTime(timeLeft);
+          updateCircleTimer(timeLeft, totalTime);
+      }, 1000);
+  }
   
-                  timeLeft--;
-                  document.getElementById('timerText').textContent = formatTime(timeLeft);
-                  updateCircleTimer(timeLeft, totalTime);
-              }, 1000);
-          }
   
           function pauseMeditation() {
               clearInterval(meditationTimer);
           }
   
           function updateCircleTimer(secondsLeft, totalSeconds) {
-              const circle = document.querySelector('.circle-timer .foreground');
-              const offset = 408 * (1 - (secondsLeft / totalSeconds));
-              circle.style.strokeDashoffset = offset;
-          }
+      const circle = document.querySelector('.circle-timer .foreground');
+      const offset = 408 * (1 - (secondsLeft / totalSeconds));
+      circle.style.strokeDashoffset = offset;
+  }
+  
+          document.getElementById('meditationBtn').addEventListener('click', () => {
+      if (alertSound.playing) {
+          alertSound.pause();
+          alertSound.currentTime = 0;
+          document.getElementById('meditationBtn').textContent = 'start';
+      }
+  });
+  
   
           window.onload = updateMeditationTime;
       </script>
@@ -458,3 +482,4 @@
     <script src="index.js"></script>
   </body>
 </html>
+<!--end of program-->
