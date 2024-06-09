@@ -1,5 +1,5 @@
 # :seedling: gnome biome
-gnome biome is a whimsical, garden-themed self-care and wellness website designed to nurture the user's mind and remind them to take care of themselves! the heart of the website stars Quillby, an AI gnome who offers personalized wellness advice and tips. the site features a real-time text editing experience with TinyMCE, ensuring your notes and goals are autosaved. stay on track with gentle notification reminders and keep tabs on your emotional well-being with a comforting daily mood tracker calendar.
+gnome biome is a whimsical, garden-themed self-care and wellness website designed to nurture the user's mind and remind them to take care of themselves! the heart of the website stars Quillby, an AI gnome who offers personalized wellness advice and tips. the site features a real-time text editing experience with TinyMCE, ensuring your notes and goals are autosaved. stay on track with gentle notification reminders and keep tabs on your emotional well-being with a comforting daily mood tracker calendar. additionally, consider taking a meditation break with audio-visual breathing exercises and meditation timers.
 
 ## :mushroom: getting started
 
@@ -9,13 +9,12 @@ utilize Windows 10 to ensure notifications are compatible.
 ### executing program
 download the zip file, enable notifications, and open index.html in your browser. alternatively, you may also visit the deployed version on [Github Pages](https://elainesyqian.github.io/gnome-biome/)
 
-
 ## :shamrock: authors
-Eileen Kuang: [@eileenkuang](https://github.com/eileenkuang)
+Eileen Kuang: [@eileenkuang](https://github.com/eileenkuang), Fullstack, AI Integration
 
-Elaine Qian: [@elainesyqian](https://github.com/elainesyqian)
+Elaine Qian: [@elainesyqian](https://github.com/elainesyqian), Fullstack
 
-Vanessa Tan: [@vanessatan2007](https://github.com/vanessatan2007)
+Vanessa Tan: [@vanessatan2007](https://github.com/vanessatan2007), Fullstack
 
 ## :blossom: acknowledgments
 inspiration, code snippets, etc.
