@@ -12,7 +12,9 @@ Download the zip file, enable notifications, and open index.html in your browser
 ## Authors
 
 Eileen Kuang, [@eileenkuang](https://github.com/eileenkuang)
+
 Elaine Qian, [@elainesyqian](https://github.com/elainesyqian)
+
 Vanessa Tan, [@vanessatan2007](https://github.com/vanessatan2007)
 
 ## Acknowledgments
