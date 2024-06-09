@@ -394,10 +394,12 @@ button:hover {
   background-color: #64a5a0;
 }
 
+/*style for banner*/
 .banner {
   position: center;
 }
 
+/*style for banner image*/
 .banner img {
   margin-left: auto;
   margin-right: auto;
