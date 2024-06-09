@@ -278,7 +278,6 @@
               <div class="mushrooms">
                 <img src="mushrooms.png" alt="Mushrooms Image">
               </div>
-
             </section>
 
             <section id="mood-calendar">
@@ -316,7 +315,7 @@
           <div class="card1">
               <h2><font size="6">breathing exercise</font></h2>
               <div class="breathing-circle" id="circle">
-                  <div class="inner-circle" id="innerCircle"><span id="breathText">breathe</span></div>
+                  <div class="inner-circle" id="innerCircle"><span id="breathText">Breathe</span></div>
               </div>
               <div class="button-container">
                   <button id="breathingBtn" onclick="toggleBreathing()">start</button>
@@ -375,11 +374,11 @@
               if (breatheIn) {
                   innerCircle.style.width = '130px'; // updated
                   innerCircle.style.height = '130px'; // updated
-                  breathText.textContent = 'inhale';
+                  breathText.textContent = 'Inhale';
               } else {
                   innerCircle.style.width = '0';
                   innerCircle.style.height = '0';
-                  breathText.textContent = 'exhale';
+                  breathText.textContent = 'Exhale';
               }
               breatheIn = !breatheIn;
           }
@@ -389,7 +388,7 @@
           let meditationRunning = false;
           const alertSound = document.getElementById('alertSound');
   
-           updateMeditationTime() {
+          function updateMeditationTime() {
               const slider = document.getElementById('meditationSlider');
               const timeDisplay = document.getElementById('meditationTime');
               const initialTime = slider.value;
@@ -486,4 +485,3 @@
     <script src="index.js"></script>
   </body>
 </html>
-<!--end of program-->
