@@ -1,4 +1,4 @@
-# :seedling: gnome biome
+# :seedling: gnome biome 
 gnome biome is a whimsical, garden-themed self-care and wellness website designed to nurture the user's mind and remind them to take care of themselves! the heart of the website stars Quillby, an AI gnome who offers personalized wellness advice and tips. the site features a real-time text editing experience with TinyMCE, ensuring your notes and goals are autosaved. stay on track with gentle notification reminders and keep tabs on your emotional well-being with a comforting daily mood tracker calendar. additionally, consider taking a meditation break with audio-visual breathing exercises and meditation timers.
 
 ## :mushroom: getting started
